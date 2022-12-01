@@ -58,6 +58,8 @@ class LinkFooter extends React.PureComponent {
           <strong>{domain}</strong>:
           {' '}
           <Link key='about' to='/about'><FormattedMessage id='footer.about' defaultMessage='About' /></Link>
+          {' · '}
+          <a href='https://opencollective.com/mstdnparty' target='_blank'>Donate</a>
           {canInvite && (
             <>
               {' · '}
@@ -72,6 +74,18 @@ class LinkFooter extends React.PureComponent {
           )}
           {' · '}
           <Link key='privacy-policy' to='/privacy-policy'><FormattedMessage id='footer.privacy_policy' defaultMessage='Privacy policy' /></Link>
+        </p>
+
+        <p>
+          <strong>Our services</strong>:
+          {' '}
+          <a href='https://neat.computer' target='_blank'>neat.computer</a>
+          {' · '}
+          <a href='https://mstdn.party' target='_blank'>mstdn.party</a>
+          {' · '}
+          <a href='https://mstdn.plus' target='_blank'>mstdn.plus</a>
+          {' · '}
+          <a href='https://pxlfd.party' target='_blank'>pxlfd.plus</a>
         </p>
 
         <p>
