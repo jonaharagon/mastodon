@@ -79,13 +79,13 @@ class LinkFooter extends React.PureComponent {
         <p>
           <strong>Our services</strong>:
           {' '}
+          <a href='https://fediverse.us' target='_blank'>fediverse.us</a>
+          {' · '}
           <a href='https://neat.computer' target='_blank'>neat.computer</a>
           {' · '}
           <a href='https://mstdn.party' target='_blank'>mstdn.party</a>
           {' · '}
           <a href='https://mstdn.plus' target='_blank'>mstdn.plus</a>
-          {' · '}
-          <a href='https://pxlfd.party' target='_blank'>pxlfd.plus</a>
         </p>
 
         <p>
