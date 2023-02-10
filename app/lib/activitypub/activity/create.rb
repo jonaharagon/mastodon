@@ -222,7 +222,7 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
     return if tag['href'].blank?
 
     account = account_from_uri(tag['href'])
-    account = ActivityPub::FetchRemoteAccountService.new.call(tag['href']) if account.nil?
+    account = ActivityPub::FetchRemoteAccountService.new.call(tag['href'], request_id: @options[:request_id]) if account.nil?
 
     return if account.nil?
 
@@ -285,7 +285,7 @@ class ActivityPub::Activity::Create < ActivityPub::Activity
 
     media_attachments
   rescue Addressable::URI::InvalidURIError => e
-    Rails.logger.debug "Invalid URL in attachment: #{e}"
+    Rails.logger.debug { "Invalid URL in attachment: #{e}" }
     media_attachments
   end
 
