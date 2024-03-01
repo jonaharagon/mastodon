@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 import { WordmarkLogo } from 'mastodon/components/logo';
 import NavigationPortal from 'mastodon/components/navigation_portal';
-import { timelinePreview, trendsEnabled } from 'mastodon/initial_state';
+import { timelinePreview, trendsEnabled, donationPageUrl } from 'mastodon/initial_state';
 import { transientSingleColumn } from 'mastodon/is_mobile';
 
 import ColumnLink from './column_link';
@@ -114,7 +114,12 @@ class NavigationPanel extends Component {
             <hr />
 
             <ColumnLink transparent href='/settings/preferences' icon='cog' text={intl.formatMessage(messages.preferences)} />
-            <ColumnLink transparent href='https://opencollective.com/mstdnparty' icon='heart' text="Donate" />
+
+            {donationPageUrl && (
+              <>
+                <ColumnLink transparent href={donationPageUrl} icon='heart' text="Donate" />
+              </>
+            )}
           </>
         )}
 

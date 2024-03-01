@@ -34,6 +34,7 @@ class InitialStateSerializer < ActiveModel::Serializer
       single_user_mode: Rails.configuration.x.single_user_mode,
       trends_as_landing_page: Setting.trends_as_landing_page,
       status_page_url: Setting.status_page_url,
+      donation_page_url: Setting.donation_page_url,
       sso_redirect: sso_redirect,
     }
 

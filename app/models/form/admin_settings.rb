@@ -35,6 +35,7 @@ class Form::AdminSettings
     content_cache_retention_period
     backups_retention_period
     status_page_url
+    donation_page_url
     captcha_enabled
     authorized_fetch
   ).freeze
@@ -80,6 +81,7 @@ class Form::AdminSettings
   validates :media_cache_retention_period, :content_cache_retention_period, :backups_retention_period, numericality: { only_integer: true }, allow_blank: true, if: -> { defined?(@media_cache_retention_period) || defined?(@content_cache_retention_period) || defined?(@backups_retention_period) }
   validates :site_short_description, length: { maximum: 200 }, if: -> { defined?(@site_short_description) }
   validates :status_page_url, url: true, allow_blank: true
+  validates :donation_page_url, url: true, allow_blank: true
   validate :validate_site_uploads
 
   KEYS.each do |key|
