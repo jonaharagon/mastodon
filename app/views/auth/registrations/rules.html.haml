@@ -26,14 +26,4 @@
     = link_to t('auth.rules.accept'), accept_path, class: 'button'
     = link_to t('auth.rules.back'), root_path, class: 'button button-tertiary'
 
-  %p.lead
-    %strong New!
-    Help balance the load and get a
-    %strong @mstdn.plus
-    username by joining our secondary Mastodon instance instead:
-
-  .stacked-actions
-    %a.button.button-tertiary{:href => "https://mstdn.plus"}
-      %span Join MSTDN.PLUS
-
 .form-footer= render 'auth/shared/links'
