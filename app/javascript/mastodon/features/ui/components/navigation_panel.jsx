@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import AlternateEmailIcon from '@/material-icons/400-24px/alternate_email.svg?react';
 import BookmarksActiveIcon from '@/material-icons/400-24px/bookmarks-fill.svg?react';
 import BookmarksIcon from '@/material-icons/400-24px/bookmarks.svg?react';
+import DonationIcon from '@/material-icons/400-24px/favorite.svg?react';
 import ExploreActiveIcon from '@/material-icons/400-24px/explore-fill.svg?react';
 import ExploreIcon from '@/material-icons/400-24px/explore.svg?react';
 import ModerationIcon from '@/material-icons/400-24px/gavel.svg?react';
@@ -183,7 +184,7 @@ class NavigationPanel extends Component {
 
               {donationPageUrl && (
                 <>
-                  <ColumnLink transparent href={donationPageUrl} icon='heart' text="Donate" />
+                  <ColumnLink transparent href={donationPageUrl} icon='heart' iconComponent={DonationIcon} text="Donate" />
                 </>
               )}
 
