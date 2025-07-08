@@ -44,6 +44,11 @@
               wrapper: :with_block_label
 
   .fields-group
+    = f.input :donation_page_url,
+              wrapper: :with_block_label,
+              input_html: { placeholder: "https://donate.#{Rails.configuration.x.local_domain}" }
+
+  .fields-group
     = f.input :site_terms,
               as: :text,
               input_html: { rows: 8 },

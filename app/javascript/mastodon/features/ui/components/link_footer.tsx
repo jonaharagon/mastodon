@@ -6,6 +6,7 @@ import {
   domain,
   version,
   source_url,
+  donationPageUrl,
   statusPageUrl,
   profile_directory as canProfileDirectory,
   termsOfServiceEnabled,
@@ -32,6 +33,13 @@ export const LinkFooter: React.FC<{
               <span className='sr-only'> {domain}</span>
             </Link>
           </li>
+          {donationPageUrl && (
+            <li>
+              <a href={donationPageUrl} target='_blank' rel='noopener'>
+                <FormattedMessage id='footer.donate' defaultMessage='Donate' />
+              </a>
+            </li>
+          )}
           {statusPageUrl && (
             <li>
               <a href={statusPageUrl} target='_blank' rel='noopener'>
@@ -75,6 +83,36 @@ export const LinkFooter: React.FC<{
               </Link>
             </li>
           )}
+          <li>
+            <a href='https://www.jonaharagon.com' target='_blank' rel='noopener'>
+              jonaharagon.com
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 className={classes.heading}>Our services:</h2>
+        <ul className={classes.list}>
+          <li>
+            <a href='https://fediverse.us' target='_blank' rel='noopener'>
+              fediverse.us
+            </a>
+          </li>
+          <li>
+            <a href='https://neat.computer' target='_blank' rel='noopener'>
+              neat.computer
+            </a>
+          </li>
+          <li>
+            <a href='https://mstdn.party' target='_blank' rel='noopener'>
+              mstdn.party
+            </a>
+          </li>
+          <li>
+            <a href='https://mstdn.plus' target='_blank' rel='noopener'>
+              mstdn.plus
+            </a>
+          </li>
         </ul>
       </section>
       <section>
