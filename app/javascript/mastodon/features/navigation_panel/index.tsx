@@ -17,6 +17,7 @@ import BookmarksActiveIcon from '@/material-icons/400-24px/bookmarks-fill.svg?re
 import BookmarksIcon from '@/material-icons/400-24px/bookmarks.svg?react';
 import CollectionsActiveIcon from '@/material-icons/400-24px/category-fill.svg?react';
 import CollectionsIcon from '@/material-icons/400-24px/category.svg?react';
+import DonationIcon from '@/material-icons/400-24px/favorite.svg?react';
 import HomeActiveIcon from '@/material-icons/400-24px/home-fill.svg?react';
 import HomeIcon from '@/material-icons/400-24px/home.svg?react';
 import InfoIcon from '@/material-icons/400-24px/info.svg?react';
@@ -43,6 +44,7 @@ import {
   localLiveFeedAccess,
   remoteLiveFeedAccess,
   trendsEnabled,
+  donationPageUrl,
   me,
 } from 'mastodon/initial_state';
 import { transientSingleColumn } from 'mastodon/is_mobile';
@@ -390,6 +392,14 @@ export const NavigationPanel: React.FC<{ multiColumn?: boolean }> = ({
                 iconComponent={SettingsIcon}
                 text={intl.formatMessage(messages.preferences)}
               />
+            </li>
+
+            <li>
+              {donationPageUrl && (
+                <>
+                  <ColumnLink transparent href={donationPageUrl} icon='heart' iconComponent={DonationIcon} text="Donate" />
+                </>
+              )}
             </li>
 
             <li>

@@ -61,6 +61,7 @@ class REST::InstanceSerializer < ActiveModel::Serializer
       urls: {
         streaming: Rails.configuration.x.streaming_api_base_url,
         status: object.status_page_url,
+        donation: object.donation_page_url,
         about: about_url,
         privacy_policy: privacy_policy_url,
         terms_of_service: TermsOfService.current.present? ? terms_of_service_url : nil,
