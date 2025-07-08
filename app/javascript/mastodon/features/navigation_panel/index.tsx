@@ -14,6 +14,7 @@ import AddIcon from '@/material-icons/400-24px/add.svg?react';
 import AlternateEmailIcon from '@/material-icons/400-24px/alternate_email.svg?react';
 import BookmarksActiveIcon from '@/material-icons/400-24px/bookmarks-fill.svg?react';
 import BookmarksIcon from '@/material-icons/400-24px/bookmarks.svg?react';
+import DonationIcon from '@/material-icons/400-24px/favorite.svg?react';
 import HomeActiveIcon from '@/material-icons/400-24px/home-fill.svg?react';
 import HomeIcon from '@/material-icons/400-24px/home.svg?react';
 import InfoIcon from '@/material-icons/400-24px/info.svg?react';
@@ -35,7 +36,7 @@ import { Search } from 'mastodon/features/compose/components/search';
 import { ColumnLink } from 'mastodon/features/ui/components/column_link';
 import { useBreakpoint } from 'mastodon/features/ui/hooks/useBreakpoint';
 import { useIdentity } from 'mastodon/identity_context';
-import { timelinePreview, trendsEnabled, me } from 'mastodon/initial_state';
+import { timelinePreview, trendsEnabled, donationPageUrl, me } from 'mastodon/initial_state';
 import { transientSingleColumn } from 'mastodon/is_mobile';
 import { selectUnreadNotificationGroupsCount } from 'mastodon/selectors/notifications';
 import { useAppSelector, useAppDispatch } from 'mastodon/store';
@@ -305,6 +306,12 @@ export const NavigationPanel: React.FC<{ multiColumn?: boolean }> = ({
             />
 
             <hr />
+
+            {donationPageUrl && (
+              <>
+                <ColumnLink transparent href={donationPageUrl} icon='heart' iconComponent={DonationIcon} text="Donate" />
+              </>
+            )}
 
             <ColumnLink
               transparent

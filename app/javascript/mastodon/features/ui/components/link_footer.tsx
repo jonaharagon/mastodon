@@ -6,6 +6,7 @@ import {
   domain,
   version,
   source_url,
+  donationPageUrl,
   statusPageUrl,
   profile_directory as canProfileDirectory,
   termsOfServiceEnabled,
@@ -23,6 +24,14 @@ export const LinkFooter: React.FC<{
         <Link to='/about' target={multiColumn ? '_blank' : undefined}>
           <FormattedMessage id='footer.about' defaultMessage='About' />
         </Link>
+        {donationPageUrl && (
+          <>
+            <DividingCircle />
+            <a href={donationPageUrl} target='_blank' rel='noopener'>
+              <FormattedMessage id='footer.donate' defaultMessage='Donate' />
+            </a>
+          </>
+        )}
         {statusPageUrl && (
           <>
             <DividingCircle />
@@ -68,6 +77,19 @@ export const LinkFooter: React.FC<{
             </Link>
           </>
         )}
+        <DividingCircle />
+        <a href='https://www.jonaharagon.com' target='_blank'>jonaharagon.com</a>
+      </p>
+
+      <p>
+        <strong>Our services</strong>:{' '}
+        <a href='https://fediverse.us' target='_blank'>fediverse.us</a>
+        <DividingCircle />
+        <a href='https://neat.computer' target='_blank'>neat.computer</a>
+        <DividingCircle />
+        <a href='https://mstdn.party' target='_blank'>mstdn.party</a>
+        <DividingCircle />
+        <a href='https://mstdn.plus' target='_blank'>mstdn.plus</a>
       </p>
 
       <p>

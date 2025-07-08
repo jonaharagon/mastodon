@@ -36,6 +36,7 @@ class Form::AdminSettings
     content_cache_retention_period
     backups_retention_period
     status_page_url
+    donation_page_url
     captcha_enabled
     authorized_fetch
     app_icon
@@ -95,6 +96,7 @@ class Form::AdminSettings
   validates :min_age, numericality: { only_integer: true }, allow_blank: true, if: -> { defined?(@min_age) }
   validates :site_short_description, length: { maximum: DESCRIPTION_LIMIT }, if: -> { defined?(@site_short_description) }
   validates :status_page_url, url: true, allow_blank: true
+  validates :donation_page_url, url: true, allow_blank: true
   validate :validate_site_uploads
 
   KEYS.each do |key|
