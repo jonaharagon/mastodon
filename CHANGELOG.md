@@ -2,9 +2,56 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.3.9] - 2025-07-02
+
+### Changed
+
+- Change passthrough video processing to emit `moov` atom at start of video (#34726 by @ClearlyClaire)
+
+### Fixed
+
+- Fix `NoMethodError` in edge case of emoji cache handling (#34749 by @dariusk)
+- Fix error when viewing statuses to deleted replies in moderation view (#32986 by @ClearlyClaire)
+- Fix search operators sometimes getting lost (#35190 by @ClearlyClaire)
+- Fix “Alt text” button submitting form in moderation interface (#35147 by @ClearlyClaire)
+- Fix handling of remote attachments with multiple media types (#34996 by @ClearlyClaire)
+- Fix blocked accounts not being automatically removed from trending statuses (#34891 by @ClearlyClaire)
+- Fix inconsistent filtering of silenced accounts for other silenced accounts (#34863 by @ClearlyClaire)
+- Fix handling of inlined `featured` collections in ActivityPub actor objects (#34789 and #34811 by @ClearlyClaire)
+- Fix admin dashboard crash on specific Elasticsearch connection errors (#34683 by @ClearlyClaire)
+- Fix OIDC account creation failing for long display names (#34639 by @defnull)
+- Fix `/share` not using server-set characters limit (#33459 by @kescherCode)
+- Fix wrong video dimensions for some rotated videos (#33008 and #33261 by @Gargron and @tribela)
+- Fix missing autofocus on boost modal (#32953 by @tribela)
+
+## [4.3.8] - 2025-05-06
+
+### Security
+
+- Update dependencies
+- Check scheme on account, profile, and media URLs ([GHSA-x2rc-v5wx-g3m5](https://github.com/mastodon/mastodon/security/advisories/GHSA-x2rc-v5wx-g3m5))
+
+### Added
+
+- Add warning for REDIS_NAMESPACE deprecation at startup (#34581 by @ClearlyClaire)
+- Add built-in context for interaction policies (#34574 by @ClearlyClaire)
+
+### Changed
+
+- Change activity distribution error handling to skip retrying for deleted accounts (#33617 by @ClearlyClaire)
+
+### Removed
+
+- Remove double-query for signed query strings (#34610 by @ClearlyClaire)
+
+### Fixed
+
+- Fix incorrect redirect in response to unauthenticated API requests in limited federation mode (#34549 by @ClearlyClaire)
+- Fix sign-up e-mail confirmation page reloading on error or redirect (#34548 by @ClearlyClaire)
+
 ## [4.3.7] - 2025-04-02
 
-### Add
+### Added
 
 - Add delay to profile updates to debounce them (#34137 by @ClearlyClaire)
 - Add support for paginating partial collections in `SynchronizeFollowersService` (#34272 and #34277 by @ClearlyClaire)
